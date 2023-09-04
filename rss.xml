@@ -86,8 +86,8 @@
             <guid isPermalink="true">https://undead-fire-ace.github.io/2023/08/25/Fhq/</guid>
             <title>平衡树全家桶</title>
             <link>https://undead-fire-ace.github.io/2023/08/25/Fhq/</link>
-            <category term="数据结构" scheme="https://undead-fire-ace.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" />
             <category term="笔记" scheme="https://undead-fire-ace.github.io/tags/%E7%AC%94%E8%AE%B0/" />
+            <category term="数据结构" scheme="https://undead-fire-ace.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" />
             <category term="平衡树" scheme="https://undead-fire-ace.github.io/tags/%E5%B9%B3%E8%A1%A1%E6%A0%91/" />
             <pubDate>Fri, 25 Aug 2023 21:26:13 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;平衡树的种类很多，每种的平衡树的功能和效率也不尽相同，平时主要用的平衡树应该就是 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;treap&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.80952em;vertical-align:-0.19444em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;p&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 类的， &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;splay&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8888799999999999em;vertical-align:-0.19444em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;y&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; ，再带上替罪羊和 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;_&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;pb\_ds&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1.00444em;vertical-align:-0.31em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;mord&#34; style=&#34;margin-right:0.02778em;&#34;&gt;_&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;s&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 也就差不多了，当然还有使用简便的 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;set&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.61508em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;t&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; （底层实现是红黑树，非常的快）。对于每种平衡树，他们都需要维护自身的平衡来保证复杂度。&lt;/p&gt;
@@ -284,8 +284,8 @@
             <guid isPermalink="true">https://undead-fire-ace.github.io/2023/08/23/scan-line/</guid>
             <title>扫描线</title>
             <link>https://undead-fire-ace.github.io/2023/08/23/scan-line/</link>
-            <category term="数据结构" scheme="https://undead-fire-ace.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" />
             <category term="笔记" scheme="https://undead-fire-ace.github.io/tags/%E7%AC%94%E8%AE%B0/" />
+            <category term="数据结构" scheme="https://undead-fire-ace.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" />
             <category term="线段树" scheme="https://undead-fire-ace.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/" />
             <pubDate>Wed, 23 Aug 2023 21:50:30 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;如果在一个平面上给我们若干个图形求面积并，这一看就是个计算几何问题，感觉不太能用数据结构来维护，但是当这些图形都是矩形，那么问题就变的简单了，为什么，因为一旦是一堆矩形，那么对于这些相交的矩形，我们是可以将其分成若干的块的。这里为了更加形象化的理解，就借用 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mi&gt;w&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;oi-wiki&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.74285em;vertical-align:-0.08333em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.69444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02691em;&#34;&gt;w&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03148em;&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 上的图来帮助理解一下。&lt;/p&gt;
@@ -647,8 +647,8 @@
             <guid isPermalink="true">https://undead-fire-ace.github.io/2023/08/22/abc306e/</guid>
             <title>AtCoder ABC306E题解</title>
             <link>https://undead-fire-ace.github.io/2023/08/22/abc306e/</link>
-            <category term="题解" scheme="https://undead-fire-ace.github.io/tags/%E9%A2%98%E8%A7%A3/" />
             <category term="数据结构" scheme="https://undead-fire-ace.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" />
+            <category term="题解" scheme="https://undead-fire-ace.github.io/tags/%E9%A2%98%E8%A7%A3/" />
             <pubDate>Tue, 22 Aug 2023 11:26:36 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;题目传送门&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#题目传送门&#34;&gt;#&lt;/a&gt; &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9hdGNvZGVyLmpwL2NvbnRlc3RzL2FiYzMwNi90YXNrcy9hYmMzMDZfZQ==&#34;&gt;题目传送门&lt;/span&gt;&lt;/h1&gt;
 &lt;p&gt;先看题意发现是让求前 k 大的数之和，且有修改。我们考虑每次修改对答案有影响，当且仅当修改后的数在整个序列中是前 k 大，那么我们可以维护两个 multiset，分别维护前大 k 的数和剩下的数。然后我们每次插入时只需判断是哪个区间的数，然后在对应的区间删除或者插入即可。&lt;/p&gt;
@@ -660,8 +660,8 @@
             <guid isPermalink="true">https://undead-fire-ace.github.io/2023/08/22/windows-star/</guid>
             <title>窗口的星星 题解</title>
             <link>https://undead-fire-ace.github.io/2023/08/22/windows-star/</link>
-            <category term="题解" scheme="https://undead-fire-ace.github.io/tags/%E9%A2%98%E8%A7%A3/" />
             <category term="数据结构" scheme="https://undead-fire-ace.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" />
+            <category term="题解" scheme="https://undead-fire-ace.github.io/tags/%E9%A2%98%E8%A7%A3/" />
             <category term="线段树" scheme="https://undead-fire-ace.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/" />
             <pubDate>Tue, 22 Aug 2023 11:24:59 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;窗口的星星&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#窗口的星星&#34;&gt;#&lt;/a&gt; &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDE1MDI=&#34;&gt;窗口的星星&lt;/span&gt;&lt;/h1&gt;
@@ -746,8 +746,8 @@
             <guid isPermalink="true">https://undead-fire-ace.github.io/2023/08/21/sort/</guid>
             <title>HEOI2016/TJOI2016排序</title>
             <link>https://undead-fire-ace.github.io/2023/08/21/sort/</link>
-            <category term="题解" scheme="https://undead-fire-ace.github.io/tags/%E9%A2%98%E8%A7%A3/" />
             <category term="数据结构" scheme="https://undead-fire-ace.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" />
+            <category term="题解" scheme="https://undead-fire-ace.github.io/tags/%E9%A2%98%E8%A7%A3/" />
             <category term="线段树" scheme="https://undead-fire-ace.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/" />
             <pubDate>Mon, 21 Aug 2023 19:53:40 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;heoi2016tjoi2016排序&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#heoi2016tjoi2016排序&#34;&gt;#&lt;/a&gt; &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDI4MjQ=&#34;&gt;[HEOI2016/TJOI2016] 排序&lt;/span&gt;&lt;/h1&gt;
@@ -774,9 +774,9 @@
             <guid isPermalink="true">https://undead-fire-ace.github.io/2023/08/21/Fried-neck-dragon/</guid>
             <title>炸脖龙Ⅰ</title>
             <link>https://undead-fire-ace.github.io/2023/08/21/Fried-neck-dragon/</link>
+            <category term="数据结构" scheme="https://undead-fire-ace.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" />
             <category term="题解" scheme="https://undead-fire-ace.github.io/tags/%E9%A2%98%E8%A7%A3/" />
             <category term="数论" scheme="https://undead-fire-ace.github.io/tags/%E6%95%B0%E8%AE%BA/" />
-            <category term="数据结构" scheme="https://undead-fire-ace.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" />
             <category term="树状数组" scheme="https://undead-fire-ace.github.io/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" />
             <pubDate>Mon, 21 Aug 2023 19:51:44 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;题目传送门&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#题目传送门&#34;&gt;#&lt;/a&gt; &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDM5MzQ=&#34;&gt;题目传送门&lt;/span&gt;&lt;/h1&gt;
