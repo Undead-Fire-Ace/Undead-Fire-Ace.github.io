@@ -32,7 +32,7 @@
     "mathjax": "^3.2.2"
   },
   "devDependencies": {
-    "chai": "^4.3.7",
+    "chai": "^4.3.8",
     "hexo-feed": "^1.1.1",
     "mocha": "^10.2.0"
   }
